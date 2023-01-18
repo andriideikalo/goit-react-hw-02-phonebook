@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
-import ContactItem from './ContactItem';
+import ContactItem from './ContactItem/ContactItem';
 
 const ContactList = ({ items, onDelete }) => {
   return (
@@ -16,7 +16,7 @@ ContactList.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-    }),
+    })
   ),
 
   onDelete: PropTypes.func.isRequired,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ContactForm from './ContactForms/ContactForm';
 import { nanoid } from 'nanoid';
-// import { render } from '@testing-library/react';
+import ContactList from './ContactList/ContactList';
 
 export class App extends Component {
   state = {
@@ -25,10 +25,26 @@ export class App extends Component {
     }));
   };
 
+  deleteItem = id => {
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts.filter(item => item.id !== id)],
+    }));
+  };
+
+  getFilteredContacts = () => {
+    const { filter, contacts } = this.state;
+    return contacts.filter(({ name }) => name.toLowerCase().includes(filter));
+  };
+
   render() {
     return (
-      <ContactForm onSubmit={this.addContact} />
-
+      <>
+        <ContactForm onSubmit={this.addContact} />
+        <ContactList
+          onDelete={this.deleteItem}
+          items={this.getFilteredContacts()}
+        />
+      </>
       // <div
       //   style={{
       //     height: '100vh',
