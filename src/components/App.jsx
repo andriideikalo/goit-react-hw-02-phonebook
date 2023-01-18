@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ContactForm from './ContactForms/ContactForm';
 import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
+import Filter from './Filter';
 
 export class App extends Component {
   state = {
@@ -40,15 +41,24 @@ export class App extends Component {
     const { filter, contacts } = this.state;
     return contacts.filter(({ name }) => name.toLowerCase().includes(filter));
   };
+  onFilterChange = e => {
+    const filter = e.target.value;
+    this.setState({ filter: filter.toLowerCase() });
+  };
 
   render() {
     return (
       <>
-        <ContactForm onSubmit={this.addContact} />
-        <ContactList
-          onDelete={this.deleteItem}
-          items={this.getFilteredContacts()}
-        />
+        <div>
+          <h1>Phonebook</h1>
+          <ContactForm onSubmit={this.addContact} />
+          <h2>Contacts</h2>
+          <Filter onChange={this.onFilterChange} />
+          <ContactList
+            onDelete={this.deleteItem}
+            items={this.getFilteredContacts()}
+          />
+        </div>
       </>
       // <div
       //   style={{
