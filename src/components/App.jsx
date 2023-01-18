@@ -6,7 +6,7 @@ import ContactList from './ContactList/ContactList';
 export class App extends Component {
   state = {
     contacts: [],
-    name: '',
+    filter: '',
   };
 
   addContact = contact => {
