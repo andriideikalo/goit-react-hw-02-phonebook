@@ -13,9 +13,11 @@ const ContactItemStyled = styled.li`
     background-color: lightgray;
     border-radius: 5px;
     border: none;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: tomato;
       color: white;
+      outline: 0;
     }
   }
 `;
