@@ -4,11 +4,11 @@ import ContactItem from './ContactItem/ContactItem';
 
 const ContactList = ({ items, onDelete }) => {
   return (
-    <ul>
+    <ol>
       {items.map(item => (
         <ContactItem key={item.id} onDelete={onDelete} contact={item} />
       ))}
-    </ul>
+    </ol>
   );
 };
 

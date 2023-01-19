@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const ContactItemStyled = styled.li`
   margin-bottom: 20px;
+  /* list-style: lower-greek; */
   span {
     display: inline-block;
     margin-right: 10px;
@@ -9,10 +10,11 @@ const ContactItemStyled = styled.li`
 
   button {
     cursor: pointer;
-    background: none;
+    background-color: lightgray;
     border-radius: 5px;
+    border: none;
     &:hover {
-      background-color: blue;
+      background-color: tomato;
       color: white;
     }
   }
