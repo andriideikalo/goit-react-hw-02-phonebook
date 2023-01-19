@@ -1,17 +1,19 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
-import ContactItemStyled from './ContactItem.styled';
+import { ContactItemStyled } from './ContactItem.styled';
+import { ContactNameItemStyled } from './ContactItem.styled';
+import { ButtonItemStyled } from './ContactItem.styled';
 
 const ContactItem = ({ contact, onDelete }) => {
   const { id, name, number } = contact;
   return (
     <ContactItemStyled>
-      <span>
+      <ContactNameItemStyled>
         {name}: {number}
-      </span>
-      <button onClick={() => onDelete(id)} type="button">
+      </ContactNameItemStyled>
+      <ButtonItemStyled onClick={() => onDelete(id)} type="button">
         Delete
-      </button>
+      </ButtonItemStyled>
     </ContactItemStyled>
   );
 };
