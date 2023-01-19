@@ -1,8 +1,8 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { InputFilterStyled } from './Filter.styled';
-import { FilterLabelStyled } from './Filter.styled';
+import { InputFilterStyled } from './FilterStyled';
+import { FilterLabelStyled } from './FilterStyled';
 
 const Filter = ({ onChange }) => {
   const filterId = nanoid();

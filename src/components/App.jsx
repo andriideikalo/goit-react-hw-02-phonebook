@@ -46,6 +46,14 @@ export class App extends Component {
     this.setState({ filter: filter.toLowerCase() });
   };
 
+  ifelsefunction() {
+    var seltheme = document.getElementById('selcolor').value;
+
+    var elem = document.getElementById('pict');
+
+    elem.style.backgroundColor = seltheme;
+  }
+
   render() {
     return (
       <>

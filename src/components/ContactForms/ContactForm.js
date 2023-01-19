@@ -1,10 +1,10 @@
 import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { FormStyled } from './ContactForm.styled';
-import { InputStyled } from './ContactForm.styled';
-import { LabelStyled } from './ContactForm.styled';
-import { BottonStyled } from './ContactForm.styled';
+import { FormStyled } from './ContactFormStyled';
+import { InputStyled } from './ContactFormStyled';
+import { LabelStyled } from './ContactFormStyled';
+import { BottonStyled } from './ContactFormStyled';
 
 class ContactForm extends Component {
   state = {
