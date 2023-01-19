@@ -1,7 +1,10 @@
 import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import FormStyled from './ContactForm.styled';
+import { FormStyled } from './ContactForm.styled';
+import { InputStyled } from './ContactForm.styled';
+import { LabelStyled } from './ContactForm.styled';
+import { BottonStyled } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
@@ -39,8 +42,8 @@ class ContactForm extends Component {
     return (
       <>
         <FormStyled name="contact" onSubmit={this.handleSubmit}>
-          <label htmlFor={this.nameId}>Name</label>
-          <input
+          <LabelStyled htmlFor={this.nameId}>Name</LabelStyled>
+          <InputStyled
             value={name}
             onChange={this.handleChange}
             id={this.nameId}
@@ -51,8 +54,8 @@ class ContactForm extends Component {
             required
           />
 
-          <label htmlFor={this.numberId}>Number</label>
-          <input
+          <LabelStyled htmlFor={this.numberId}>Number</LabelStyled>
+          <InputStyled
             value={number}
             onChange={this.handleChange}
             id={this.numberId}
@@ -63,7 +66,7 @@ class ContactForm extends Component {
             required
           />
 
-          <button type="submit">Add contact</button>
+          <BottonStyled type="submit">Add contact</BottonStyled>
         </FormStyled>
       </>
     );
